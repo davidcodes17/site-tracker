@@ -4,7 +4,7 @@ import React from 'react'
 const Logo = () => {
   return (
     <Box width={"fit-content"}>
-        <Image borderRadius={40} src='/logo.jpg' width={"100px"} />
+        <Image borderRadius={40} src='/SHOP.CO.svg' width={"100px"} />
     </Box>
   )
 }

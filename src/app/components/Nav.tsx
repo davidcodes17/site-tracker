@@ -23,7 +23,7 @@ const Nav = () => {
       top={0}
       alignItems={"center"}
       px={5}
-      pt={4}
+      py={4}
       // boxShadow={"0px 0px 10px #eee"}
       justifyContent={"space-between"}
     >
