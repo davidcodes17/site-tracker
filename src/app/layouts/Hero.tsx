@@ -11,7 +11,7 @@ const Hero = () => {
         pt={{ lg: 20, md: 20, sm: 20, base: 10 }}
         bgRepeat={"no-repeat"}
         bgImage={"url('/bg.svg')"}
-        height={{lg : "90vh", md : "90vh", sm : "70vh", base: "70vh"}}
+        height={{lg : "90vh", md : "90vh", sm : "90vh", base: "70vh"}}
         width={"100%"}
       >
         <Flex>
