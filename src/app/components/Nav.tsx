@@ -62,12 +62,28 @@ const Nav = () => {
 
       <SearchCompo />
 
-      <Flex alignItems={"center"} gap={5}>
-        <BiCart size={30} />
-        <User variant="Bold" />
-        <Box onClick={onOpen} ref={btnRef} cursor={"pointer"}>
+      <Flex
+        display={{ lg: "none", md: "none", sm: "flex", base: "flex" }}
+        alignItems={"center"}
+        gap={5}
+      >
+        <Box
+          onClick={onOpen}
+          display={{ lg: "none", md: "none", sm: "block", base: "block" }}
+          ref={btnRef}
+          cursor={"pointer"}
+        >
           <HambergerMenu size={30} />
         </Box>
+      </Flex>
+
+      <Flex
+        display={{ lg: "flex", md: "flex", sm: "none", base: "none" }}
+        alignItems={"center"}
+        gap={5}
+      >
+        <BiCart size={30} />
+        <User variant="Bold" />
       </Flex>
 
       <>
@@ -96,6 +112,12 @@ const Nav = () => {
               </Text>
               <Text cursor={"pointer"} fontWeight={500}>
                 Brands
+              </Text>
+              <Text cursor={"pointer"} fontWeight={500}>
+                Cart
+              </Text>
+              <Text cursor={"pointer"} fontWeight={500}>
+                Profile
               </Text>
             </Box>
           </DrawerContent>

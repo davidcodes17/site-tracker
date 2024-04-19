@@ -5,7 +5,7 @@ import { BsFacebook, BsGithub, BsInstagram, BsTwitterX } from "react-icons/bs";
 
 const MainFooter = () => {
   return (
-    <Box width={"100%"} py={40} px={20} bg={"#ddd"}>
+    <Box width={"100%"} py={40} px={{lg : 20, md : 20, sm : 10, base : 10}} bg={"#ddd"}>
       <Flex justifyContent={"space-between"} flexWrap={"wrap"}>
         <Box width={300}>
           <Logo />

@@ -11,19 +11,19 @@ const Hero = () => {
         pt={{ lg: 20, md: 20, sm: 20, base: 10 }}
         bgRepeat={"no-repeat"}
         bgImage={"url('/bg.svg')"}
-        height={"90vh"}
+        height={{lg : "90vh", md : "90vh", sm : "70vh", base: "70vh"}}
         width={"100%"}
       >
         <Flex>
           <Box
             width={{ lg: 900, md: 800, sm: "100%", base: "100%" }}
-            mt={{ lg: 10, md: 10, sm: 0, base: 0 }}
+            mt={{ lg: 10, md: 10, sm: 0, base: 10 }}
             p={{lg : 10, md : 10, sm : 5, base:5}}
           >
-            <Heading fontWeight={900} fontSize={{ lg: 70, md: 70, sm: 50 }}>
+            <Heading fontWeight={900} fontSize={{ lg: 70, md: 70, sm: 50, base : 50 }}>
               FIND CLOTHES THAT MATCHES YOUR STYLE
             </Heading>
-            <Text width={{ lg: 600, md: 500, sm: "100%" }}>
+            <Text width={{ lg: 600, md: 500, sm: "100%", base: "100%" }}>
               Browse through our diverse range of meticulously crafted garments,
               designed to bring out your individuality and cater to your sense
               of style.
@@ -51,8 +51,44 @@ const Hero = () => {
           overflowX={"scroll"}
           px={10}
           gap={10}
-          pt={4}
+          pt={{lg : 4, md : 4, sm : 6, base : 7}}
         >
+          <Image src="/gucci.svg" />
+          <Image src="/prada.svg" />
+          <Image src="/zara.svg" />
+          <Image src="/gucci.svg" />
+          <Image src="/prada.svg" />
+          <Image src="/zara.svg" />
+          <Image src="/gucci.svg" />
+          <Image src="/prada.svg" />
+          <Image src="/zara.svg" />
+          <Image src="/gucci.svg" />
+          <Image src="/prada.svg" />
+          <Image src="/zara.svg" />
+          <Image src="/gucci.svg" />
+          <Image src="/prada.svg" />
+          <Image src="/zara.svg" />
+          <Image src="/gucci.svg" />
+          <Image src="/prada.svg" />
+          <Image src="/zara.svg" />
+          <Image src="/gucci.svg" />
+          <Image src="/prada.svg" />
+          <Image src="/zara.svg" />
+          <Image src="/gucci.svg" />
+          <Image src="/prada.svg" />
+          <Image src="/zara.svg" />
+          <Image src="/gucci.svg" />
+          <Image src="/prada.svg" />
+          <Image src="/zara.svg" />
+          <Image src="/gucci.svg" />
+          <Image src="/prada.svg" />
+          <Image src="/zara.svg" />
+          <Image src="/gucci.svg" />
+          <Image src="/prada.svg" />
+          <Image src="/zara.svg" />
+          <Image src="/gucci.svg" />
+          <Image src="/prada.svg" />
+          <Image src="/zara.svg" />
           <Image src="/gucci.svg" />
           <Image src="/prada.svg" />
           <Image src="/zara.svg" />

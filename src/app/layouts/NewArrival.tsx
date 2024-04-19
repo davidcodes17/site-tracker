@@ -6,7 +6,7 @@ import { products } from "../products";
 const NewArrival = () => {
   return (
     <Box mt={{ lg: "150px", md: "150px", sm: "80px", base: "80px" }}>
-      <Heading textAlign={"center"} fontSize={{lg : 60, md :50, sm : 40, base: "30px"}} pb={20} fontWeight={800}>
+      <Heading textAlign={"center"} fontSize={{lg : 60, md :50, sm : 40, base: "40px"}} pb={{lg : 20, md : 20, sm : 10, base: 10}} fontWeight={800}>
         NEW ARRIVALS
       </Heading>
 

@@ -17,7 +17,7 @@ const ProductCard = ({
 }) => {
   const rate = Number(rating);
   return (
-    <Box className="card" width={{lg : "fit-content", md : "fit-content", sm : 150, base: 100}}>
+    <Box className="card" width={{lg : "fit-content", md : "fit-content", sm : 150, base: 150}}>
       <Image src={image} width={{lg : "100%", md : "100%", sm : "100%", base : "100%" }} borderRadius={20} />
       <Text pt={5} fontSize={{lg : 15, md : 12, sm : 12, base : 12}} fontWeight={700}>
         {name}

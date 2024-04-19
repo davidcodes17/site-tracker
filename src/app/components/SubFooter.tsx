@@ -23,7 +23,7 @@ const SubFooter = () => {
         alignItems={"center"}
         px={{ lg: 20, md: 20, sm: 0, base: 0 }}
         borderRadius={{ lg: 100, md: 70, sm: 40, base: 40 }}
-        py={{ lg: 8, md: 8, sm: 10, base: 5 }}
+        py={{ lg: 8, md: 8, sm: 10, base: 10 }}
       >
         <Heading
           fontWeight={900}
