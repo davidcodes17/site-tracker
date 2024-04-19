@@ -22,6 +22,7 @@ const NewArrival = () => {
           />
         ))}
       </Flex>
+
     </Box>
   );
 };
