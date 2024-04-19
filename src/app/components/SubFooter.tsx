@@ -3,12 +3,37 @@ import { MdEmail } from "react-icons/md";
 
 const SubFooter = () => {
   return (
-    <Box px={40} pos={"absolute"} top={-20} left={0} right={0}>
-      <Flex justifyContent={"space-between"} bg={"#000"} alignItems={"center"} px={20} borderRadius={100} py={8}>
-        <Heading fontWeight={900} color={"#fff"}>
+    <Box
+      px={{ lg: 40, md: 40, sm: 10, base: 10 }}
+      pos={"absolute"}
+      top={{ lg: -20, md: -40, sm: -40, base: -40 }}
+      left={0}
+      right={0}
+    >
+      <Flex
+        justifyContent={{
+          lg: "space-between",
+          md: "center",
+          sm: "center",
+          base: "center",
+        }}
+        width={"100%"}
+        flexWrap={"wrap"}
+        bg={"#000"}
+        alignItems={"center"}
+        px={{ lg: 20, md: 20, sm: 0, base: 0 }}
+        borderRadius={{ lg: 100, md: 70, sm: 40, base: 40 }}
+        py={{ lg: 8, md: 8, sm: 10, base: 5 }}
+      >
+        <Heading
+          fontWeight={900}
+          fontSize={{ lg: 40, md: 40, sm: "20px", base: 20 }}
+          textAlign={{ lg: "left", md: "left", sm: "center", base: "center" }}
+          color={"#fff"}
+        >
           STAY UP TO DATE ABOUT <br /> OUR LATEST OFFERS
         </Heading>
-        <Box>
+        <Box mt={{ lg: 0, md: 5, sm: 5, base: 5 }}>
           <Flex
             border={"1px solid #ddd"}
             alignItems={"center"}

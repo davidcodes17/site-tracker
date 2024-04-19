@@ -18,7 +18,7 @@ const SearchCompo = () => {
           }}
           placeholder="Search for products"
           _focus={{ boxShadow: "none" }}
-          width={500}
+          width={{lg : 500, md : 500, sm : "100%"}}
         />
       </Flex>
     </Box>

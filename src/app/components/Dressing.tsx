@@ -15,7 +15,8 @@ const Dressing = ({
   return (
     <Box
       borderRadius={20}
-      width={width}
+      mt={10}
+      width={{lg : width, md : width , sm : "100%", base: "100%"}}
       p={5}
       bgSize={"cover"}
       height={height}

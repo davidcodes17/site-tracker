@@ -6,7 +6,7 @@ import { BsFacebook, BsGithub, BsInstagram, BsTwitterX } from "react-icons/bs";
 const MainFooter = () => {
   return (
     <Box width={"100%"} py={40} px={20} bg={"#ddd"}>
-      <Flex  justifyContent={"space-between"}>
+      <Flex justifyContent={"space-between"} flexWrap={"wrap"}>
         <Box width={300}>
           <Logo />
           <Text py={5}>
@@ -21,28 +21,28 @@ const MainFooter = () => {
           </Flex>
         </Box>
 
-        <Box>
+        <Box mt={{ lg: 0, md: 10, sm: 10, base: 10 }}>
           <Heading fontSize={20}>COMPANY</Heading>
           <Text>About</Text>
           <Text>Features</Text>
           <Text>Works</Text>
           <Text>Career</Text>
         </Box>
-        <Box>
+        <Box mt={{ lg: 0, md: 10, sm: 10, base: 10 }}>
           <Heading fontSize={20}>HELP</Heading>
           <Text>Customer Support</Text>
           <Text>Delivery Details</Text>
           <Text>Terms and Conditions</Text>
           <Text>Privacy Policy</Text>
         </Box>
-        <Box>
+        <Box mt={{ lg: 0, md: 10, sm: 10, base: 10 }}>
           <Heading fontSize={20}>FAQ</Heading>
           <Text>Account</Text>
           <Text>Manage Deliveries</Text>
           <Text>Orders</Text>
           <Text>Payments</Text>
         </Box>
-        <Box>
+        <Box mt={{ lg: 0, md: 10, sm: 10, base: 10 }}>
           <Heading fontSize={20}>RESOURCES</Heading>
           <Text>Free eBooks</Text>
           <Text>Developement Tutorial</Text>
@@ -51,14 +51,24 @@ const MainFooter = () => {
         </Box>
       </Flex>
 
-      <hr style={{
-        margin : "40px 0px",
-        height : 1,
-        background : "#000",
-        borderRadius : 40
-      }} />
+      <hr
+        style={{
+          margin: "40px 0px",
+          height: 1,
+          background: "#000",
+          borderRadius: 40,
+        }}
+      />
 
-      <Flex justifyContent={"space-between"}>
+      <Flex
+        justifyContent={{
+          lg: "space-between",
+          md: "space-between",
+          sm: "center",
+          base: "center",
+        }}
+        flexWrap={"wrap"}
+      >
         <Text>Shop.co © 2000-2023, All Rights Reserved</Text>
 
         <Image src={"/cards.png"} />
