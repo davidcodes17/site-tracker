@@ -1,17 +1,31 @@
 "use client";
-import { Flex, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  CloseButton,
+  Drawer,
+  DrawerBody,
+  DrawerCloseButton,
+  DrawerContent,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerOverlay,
+  Flex,
+  Input,
+  Text,
+  useDisclosure,
+} from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import SearchCompo from "./SearchCompo";
 import UserCartCompo from "./UserCartCompo";
 import Logo from "./Logo";
+import { HambergerMenu, User } from "iconsax-react";
+import { BiCart } from "react-icons/bi";
 
 const Nav = () => {
   const [bg, setBg] = useState("none");
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      window.screenY > 20 ? setBg("#fff") : setBg("none");
-    });
-  }, []);
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const btnRef = React.useRef();
   return (
     <Flex
       pos={"fixed"}
@@ -28,7 +42,10 @@ const Nav = () => {
       justifyContent={"space-between"}
     >
       <Logo />
-      <Flex gap={10}>
+      <Flex
+        gap={10}
+        display={{ lg: "flex", md: "flex", sm: "none", base: "none" }}
+      >
         <Text fontSize={12} fontWeight={500}>
           Shop
         </Text>
@@ -45,7 +62,67 @@ const Nav = () => {
 
       <SearchCompo />
 
-      <UserCartCompo />
+      <Flex
+        display={{ lg: "none", md: "none", sm: "flex", base: "flex" }}
+        alignItems={"center"}
+        gap={5}
+      >
+        <Box
+          onClick={onOpen}
+          display={{ lg: "none", md: "none", sm: "block", base: "block" }}
+          ref={btnRef}
+          cursor={"pointer"}
+        >
+          <HambergerMenu size={30} />
+        </Box>
+      </Flex>
+
+      <Flex
+        display={{ lg: "flex", md: "flex", sm: "none", base: "none" }}
+        alignItems={"center"}
+        gap={5}
+      >
+        <BiCart size={30} />
+        <User variant="Bold" />
+      </Flex>
+
+      <>
+        <Drawer
+          isOpen={isOpen}
+          placement="right"
+          onClose={onClose}
+          finalFocusRef={btnRef}
+        >
+          <DrawerOverlay />
+          <DrawerContent px={5} pt={10}>
+            <Flex alignItems={"center"} justifyContent={"space-between"}>
+              <Logo />
+              <CloseButton onClick={onClose} />
+            </Flex>
+
+            <Box lineHeight={"60px"} mt={5}>
+              <Text cursor={"pointer"} fontWeight={500}>
+                Shop
+              </Text>
+              <Text cursor={"pointer"} fontWeight={500}>
+                On Sale
+              </Text>
+              <Text cursor={"pointer"} fontWeight={500}>
+                New Arrivals
+              </Text>
+              <Text cursor={"pointer"} fontWeight={500}>
+                Brands
+              </Text>
+              <Text cursor={"pointer"} fontWeight={500}>
+                Cart
+              </Text>
+              <Text cursor={"pointer"} fontWeight={500}>
+                Profile
+              </Text>
+            </Box>
+          </DrawerContent>
+        </Drawer>
+      </>
     </Flex>
   );
 };

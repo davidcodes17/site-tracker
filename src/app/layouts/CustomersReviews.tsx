@@ -5,12 +5,18 @@ import Review from "../components/Review";
 
 const CustomersReviews = () => {
   return (
-    <Box px={40}>
+    <Box px={{ lg: 40, md: 40, sm: 10, base: 10 }}>
       <Flex alignItems={"center"} justifyContent={"space-between"}>
-        <Heading fontWeight={900} fontSize={50}>
+        <Heading
+          fontWeight={900}
+          fontSize={{ lg: 50, md: 40, sm: "30px", base: "30px" }}
+        >
           OUR HAPPY CUSTOMERS
         </Heading>
-        <Flex gap={5}>
+        <Flex
+          gap={5}
+          display={{ lg: "flex", md: "flex", sm: "none", base: "none" }}
+        >
           <ArrowLeft size={40} />
           <ArrowRight size={40} />
         </Flex>
@@ -68,6 +74,6 @@ const CustomersReviews = () => {
       </Flex>
     </Box>
   );
-};  
+};
 
 export default CustomersReviews;
