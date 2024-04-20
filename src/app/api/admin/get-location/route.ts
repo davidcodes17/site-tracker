@@ -20,6 +20,7 @@ export const GET = async (req: _NextRequest) => {
       where: {
         // @ts-expect-error
         uuid: decode.id,
+        role: 0,
       },
     });
     // req.user = u
