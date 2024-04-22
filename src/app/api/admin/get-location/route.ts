@@ -1,3 +1,4 @@
+"use server";
 import db from "@/app/config/db";
 import { _NextRequest } from "@/types";
 import jwt from "jsonwebtoken";
