@@ -3,8 +3,8 @@ import db from "../config/db";
 const createAdmin = async () => {
   await db.user.create({
     data: {
-      email: "timileyinoyelekan11@gmail.com",
-      name: "OT",
+      email: "areegbedavid@gmail.com",
+      name: "DC",
       password: await bcrypt.hash("123456", 10),
       role:0
     },

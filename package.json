@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "npm run migrate && next build",
     "start": "next start",
-    "migrate":"prisma migrate dev",
+    "migrate": "prisma migrate dev",
     "lint": "next lint"
   },
   "dependencies": {

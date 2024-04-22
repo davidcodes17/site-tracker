@@ -2,7 +2,7 @@ import db from "@/app/config/db";
 import { NextRequest, NextResponse } from "next/server";
 import bcryptjs from "bcryptjs";
 import jwt from "jsonwebtoken";
-import createAdmin from "@/app/utils/createAdmin";
+// import createAdmin from "@/app/utils/createAdmin";
 export const POST = async (req: NextRequest) => {
   try {
     // createAdmin()
