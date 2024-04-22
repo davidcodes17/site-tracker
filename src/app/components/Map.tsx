@@ -42,7 +42,7 @@ const Map: React.FC<MapProps> = ({ lat, lng, zoom = 10 }) => {
     };
   }, [lat, lng, zoom]);
 
-  return <div ref={mapRef} style={{ width: "100%", height: "400px" }}></div>;
+  return <div ref={mapRef} style={{ width: "100%", height: "100%" }}></div>;
 };
 
 export default Map;
