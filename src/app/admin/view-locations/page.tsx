@@ -1,5 +1,5 @@
 "use client";
-// import CustomIframe from "@/app/components/CustomIframe";
+import CustomIframe from "@/app/components/CustomIframe";
 
 import DeviceDetails from "@/app/components/DeviceDetails";
 import {
@@ -38,8 +38,14 @@ interface Location {
   uuid: string;
 }
 
+const API_KEY = "AIzaSyCIw87YsX4sjpYE0xVW7vPhq6GtHTN2Tkc";
+
 const page = () => {
   const [data, setData] = useState<Location[]>([]);
+  const [isSelected, setIsSelected] = useState<{
+    lon: string | number;
+    lat: string | number;
+  }>(null!);
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
@@ -60,6 +66,7 @@ const page = () => {
       location.href = "/admin";
     }
   }, []);
+
   return (
     <Box>
       <Flex
@@ -81,6 +88,7 @@ const page = () => {
           width={{ lg: "30vw", md: "30vw", sm: "100%", base: "100%" }}
           height={"100vh"}
           p={5}
+          pb={10}
         >
           <Heading fontWeight={900}>Devices & Locations</Heading>
           <Box mt={5}>
@@ -89,7 +97,14 @@ const page = () => {
             ) : (
               <Accordion>
                 {data.map((data, key) => (
-                  <AccordionItem>
+                  <AccordionItem
+                    onClick={() => {
+                      setIsSelected({
+                        lon: data.longitude,
+                        lat: data.latitude,
+                      });
+                    }}
+                  >
                     <h2>
                       <AccordionButton>
                         <Box as="span" flex="1" textAlign="left">
@@ -154,7 +169,7 @@ const page = () => {
             bg={"darkorchid"}
             color={"#fff"}
             width={"100%"}
-            mt={5}
+            my={5}
             onClick={() => {
               localStorage.clear();
               location.href = "/admin";
@@ -164,7 +179,13 @@ const page = () => {
             Logout
           </Button>
         </Box>
-        {/* <CustomIframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1413.362949556452!2d3.379206!3d6.524379!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x94015ce8dd3b4caf!2sRedemption%20Resort%2C%20redemption%20camp!5e0!3m2!1sen!2sng!4v1713624717709!5m2!1sen!2sng" /> */}
+
+        {isSelected && (
+          <CustomIframe
+            src={`https://maps.googleapis.com/maps/api/staticmap?center=
+${isSelected.lat},${isSelected.lon}&zoom=14&size=400x300&sensor=false&key=${API_KEY}`}
+          />
+        )}
       </Flex>
     </Box>
   );

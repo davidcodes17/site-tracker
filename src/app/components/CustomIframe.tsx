@@ -7,6 +7,8 @@ const CustomIframe = ({ src }: { src: string }) => {
       width={{ lg: "70vw", md: "70vw", sm: "100%", base: "100%" }}
       height={{ lg: "100vh", md: "100vh", sm: "70vh", base: "70vh" }}
       p={5}
+      right={0}
+      pos={{ lg: "fixed", md: "fixed", sm: "relative", base: "relative" }}
     >
       <iframe
         src={src}
