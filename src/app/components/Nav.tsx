@@ -25,7 +25,7 @@ import { BiCart } from "react-icons/bi";
 const Nav = () => {
   const [bg, setBg] = useState("none");
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const btnRef = React.useRef();
+  const btnRef = React.useRef<HTMLDivElement>(null!);
   return (
     <Flex
       pos={"fixed"}

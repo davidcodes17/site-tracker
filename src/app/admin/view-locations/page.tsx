@@ -83,7 +83,7 @@ const page = () => {
             Logout
           </Button>
         </Box>
-        <CustomIframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1401.487137168577!2d3.4630713027182156!3d6.813489419337918!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bc128c7abf4bf%3A0x94015ce8dd3b4caf!2sRedemption%20Resort%2C%20redemption%20camp!5e0!3m2!1sen!2sng!4v1713624717709!5m2!1sen!2sng" />
+        <CustomIframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1413.362949556452!2d3.379206!3d6.524379!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x94015ce8dd3b4caf!2sRedemption%20Resort%2C%20redemption%20camp!5e0!3m2!1sen!2sng!4v1713624717709!5m2!1sen!2sng" />
       </Flex>
     </Box>
   );
