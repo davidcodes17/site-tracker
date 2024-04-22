@@ -12,12 +12,14 @@ import {
   Button,
   Flex,
   Heading,
+  Image,
   Spinner,
   Text,
 } from "@chakra-ui/react";
 import { Logout } from "iconsax-react";
 import React, { useEffect, useState } from "react";
 import { HOST } from "../../../../route";
+import Map from "@/app/components/Map";
 
 interface Location {
   browser: string;
@@ -42,10 +44,10 @@ const API_KEY = "AIzaSyCIw87YsX4sjpYE0xVW7vPhq6GtHTN2Tkc";
 
 const page = () => {
   const [data, setData] = useState<Location[]>([]);
-  const [isSelected, setIsSelected] = useState<{
-    lon: string | number;
-    lat: string | number;
-  }>(null!);
+  const [isSelected, setIsSelected] = useState({
+    lon: 0,
+    lat: 0,
+  });
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
@@ -100,9 +102,10 @@ const page = () => {
                   <AccordionItem
                     onClick={() => {
                       setIsSelected({
-                        lon: data.longitude,
-                        lat: data.latitude,
+                        lat: Number(data.latitude),
+                        lon: Number(data.longitude),
                       });
+                      console.log(isSelected);
                     }}
                   >
                     <h2>
@@ -179,13 +182,15 @@ const page = () => {
             Logout
           </Button>
         </Box>
-
+        {/* 
         {isSelected && (
-          <CustomIframe
+          <Image
             src={`https://maps.googleapis.com/maps/api/staticmap?center=
-${isSelected.lat},${isSelected.lon}&zoom=14&size=400x300&sensor=false&key=${API_KEY}`}
+            ${isSelected.lat},${isSelected.lon}&zoom=14&size=400x300&sensor=false&key=${API_KEY}`}
           />
-        )}
+        )} */}
+
+        <Map lat={isSelected.lat} lng={isSelected.lon} />
       </Flex>
     </Box>
   );
