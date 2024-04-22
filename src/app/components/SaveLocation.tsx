@@ -11,8 +11,12 @@ function SaveLocation({ location, coords }: any) {
       //   languages: ["eng"],
       //   region: "la",
       city: location.city,
-      latitude: coords ? coords.latitude : location.cityLatLong.split(",")[0],
-      longitude: coords ? coords.latitude : location.cityLatLong.split(",")[1],
+      latitude: String(
+        coords ? coords.latitude : location.cityLatLong.split(",")[0]
+      ),
+      longitude: String(
+        coords ? coords.latitude : location.cityLatLong.split(",")[1]
+      ),
       browser: location.browser,
       browserVersion: location.browserVersion,
       deviceBrand: location.deviceBrand,
