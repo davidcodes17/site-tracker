@@ -3,12 +3,18 @@ import React from "react";
 
 const CountAnalysis = () => {
   return (
-    <Flex mt={5} alignItems={"center"}>
+    <Flex
+      display={{ lg: "flex", md: "flex", sm: "flex", base: "none" }}
+      mt={5}
+      alignItems={"center"}
+    >
       <Box pr={{ lg: 5, md: 5, sm: 5, base: 5 }}>
         <Heading fontSize={{ lg: 50, md: 40, sm: "40px", base: "30px" }}>
           200+
         </Heading>
-        <Text fontSize={{lg : 15, md : 15, sm : 12, base : 12}}>International Brands</Text>
+        <Text fontSize={{ lg: 15, md: 15, sm: 12, base: 12 }}>
+          International Brands
+        </Text>
       </Box>
       <Box
         borderLeft={"1px solid #aaa"}
@@ -18,13 +24,17 @@ const CountAnalysis = () => {
         <Heading fontSize={{ lg: 50, md: 40, sm: "40px", base: "30px" }}>
           2,000+
         </Heading>
-        <Text fontSize={{lg : 15, md : 15, sm : 12, base : 12}}>High Quality Products</Text>
+        <Text fontSize={{ lg: 15, md: 15, sm: 12, base: 12 }}>
+          High Quality Products
+        </Text>
       </Box>
       <Box pl={{ lg: 5, md: 5, sm: 5, base: 5 }}>
         <Heading fontSize={{ lg: 50, md: 40, sm: "40px", base: "30px" }}>
           30,000+
         </Heading>
-        <Text fontSize={{lg : 15, md : 15, sm : 12, base : 12}}>Happy Customers</Text>
+        <Text fontSize={{ lg: 15, md: 15, sm: 12, base: 12 }}>
+          Happy Customers
+        </Text>
       </Box>
     </Flex>
   );
