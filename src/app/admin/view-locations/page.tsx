@@ -40,8 +40,8 @@ interface Location {
 
 const page = () => {
   const [data, setData] = useState<Location[]>([]);
-  const token = localStorage.getItem("token");
   useEffect(() => {
+    const token = localStorage.getItem("token");
     if (token) {
       fetch(HOST + "/get-location", {
         headers: {
