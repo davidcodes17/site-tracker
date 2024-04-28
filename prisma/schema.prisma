@@ -32,7 +32,18 @@ model Locations {
   os             String?
   osVersion      String?
 
-  createdAt DateTime @default(now())
+  postal               String?
+  country_capital      String?
+  country_tld          String?
+  deviceMemory         String?
+  dataNetwork          String?
+  keyboardLanguage     String?
+  screenSize           String?
+  timezone             String?
+  country_calling_code String?
+  currency             String?
+  currency_name        String?
+  createdAt            DateTime @default(now())
 }
 
 model User {
