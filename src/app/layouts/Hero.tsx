@@ -11,7 +11,7 @@ const Hero = () => {
         pt={{ lg: 20, md: 20, sm: 20, base: 10 }}
         bgRepeat={"no-repeat"}
         bgImage={"url('/bg.svg')"}
-        height={{lg : "90vh", md : "90vh", sm : "90vh", base: "70vh"}}
+        height={{lg : "90vh", md : "90vh", sm : "90vh", base: "90vh"}}
         width={"100%"}
       >
         <Flex>
@@ -20,10 +20,10 @@ const Hero = () => {
             mt={{ lg: 10, md: 10, sm: 0, base: 10 }}
             p={{lg : 10, md : 10, sm : 5, base:5}}
           >
-            <Heading fontWeight={900} fontSize={{ lg: 70, md: 70, sm: 50, base : 50 }}>
+            <Heading fontWeight={900} fontSize={{ lg: 70, md: 70, sm: 50, base : 40 }}>
               FIND CLOTHES THAT MATCHES YOUR STYLE
             </Heading>
-            <Text width={{ lg: 600, md: 500, sm: "100%", base: "100%" }}>
+            <Text fontSize={{lg : 15, md : 15, sm : 15, base : 12}} width={{ lg: 600, md: 500, sm: "100%", base: "100%" }}>
               Browse through our diverse range of meticulously crafted garments,
               designed to bring out your individuality and cater to your sense
               of style.
