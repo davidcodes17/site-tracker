@@ -1,3 +1,4 @@
+import { Box } from "@chakra-ui/react";
 import React, { useEffect, useRef } from "react";
 
 interface MapProps {
@@ -42,7 +43,7 @@ const Map: React.FC<MapProps> = ({ lat, lng, zoom = 10 }) => {
     };
   }, [lat, lng, zoom]);
 
-  return <div ref={mapRef} style={{ width: "100%", height: "100%" }}></div>;
+  return <Box ref={mapRef} width={"100%"} height={"100%"}></Box>;
 };
 
 export default Map;

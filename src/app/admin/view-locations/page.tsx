@@ -37,6 +37,17 @@ interface Location {
   longitude: string;
   os: string;
   osVersion: string;
+  postal: string;
+  country_capital: string;
+  country_tld: string;
+  deviceMemory: string;
+  dataNetwork: string;
+  keyboardLanguage: string;
+  screenSize: string;
+  timezone: string;
+  country_calling_code: string;
+  currency: string;
+  currency_name: string;
   uuid: string;
 }
 
@@ -87,7 +98,7 @@ const page = () => {
         flexWrap={{ lg: "nowrap", md: "nowrap", sm: "wrap", base: "wrap" }}
       >
         <Box
-          width={{ lg: "30vw", md: "30vw", sm: "100%", base: "100%" }}
+          width={{ lg: "50vw", md: "50vw", sm: "100%", base: "100%" }}
           height={"100vh"}
           p={5}
           pb={10}
@@ -100,6 +111,7 @@ const page = () => {
               <Accordion>
                 {data.map((data, key) => (
                   <AccordionItem
+                    key={key}
                     onClick={() => {
                       setIsSelected({
                         lat: Number(data.latitude),
@@ -161,6 +173,51 @@ const page = () => {
                           detail={data.osVersion}
                           topic="OS Version"
                         />
+                        <DeviceDetails detail={data.postal} topic="Postal" />
+                        <DeviceDetails
+                          detail={data.country_capital}
+                          topic="Country Capital"
+                        />
+                        <DeviceDetails
+                          detail={data.country_tld}
+                          topic="Country Tld"
+                        />
+                        <DeviceDetails
+                          detail={data.deviceMemory + "GB RAM"}
+                          topic="Device Memory"
+                        />
+                        <DeviceDetails
+                          detail={data.dataNetwork}
+                          topic="Device Network"
+                        />
+                        <DeviceDetails
+                          detail={data.keyboardLanguage}
+                          topic="Keyboard Language"
+                        />
+                        <DeviceDetails
+                          detail={
+                            data.screenSize
+                              ? data.screenSize.replace(" ", "X")
+                              : "Waiting"
+                          }
+                          topic="Screen Size"
+                        />
+                        <DeviceDetails
+                          detail={data.timezone}
+                          topic="Time Zone"
+                        />
+                        <DeviceDetails
+                          detail={data.country_calling_code}
+                          topic="Country Calling Code"
+                        />
+                        <DeviceDetails
+                          detail={data.currency}
+                          topic="Currency"
+                        />
+                        <DeviceDetails
+                          detail={data.currency_name}
+                          topic="Currency Name"
+                        />
                       </Box>
                     </AccordionPanel>
                   </AccordionItem>
@@ -171,7 +228,7 @@ const page = () => {
           <Button
             bg={"darkorchid"}
             color={"#fff"}
-            width={"100%"}
+            width={"400px"}
             my={5}
             onClick={() => {
               localStorage.clear();
@@ -190,7 +247,9 @@ const page = () => {
           />
         )} */}
 
-        <Map lat={isSelected.lat} lng={isSelected.lon} />
+        <Box width={{ lg: "50vw", md: "50vw", sm: "100vw", base: "100vw" }} pos={"fixed"}>
+          <Map lat={isSelected.lat} lng={isSelected.lon} />
+        </Box>
       </Flex>
     </Box>
   );
