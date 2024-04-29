@@ -65,7 +65,7 @@ const page = () => {
   const $visitor = useVisitor();
   useEffect(() => {
     fetchCredentials();
-    $visitor.getVisitor();
+    $visitor.getVisitor(); 
   }, []);
   return (
     <Box>
