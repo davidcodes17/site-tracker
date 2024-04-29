@@ -14,7 +14,6 @@ import {
 } from "@chakra-ui/react";
 import { Eye, EyeSlash } from "iconsax-react";
 import React, { useState } from "react";
-import { HOST } from "../../../route";
 
 const page = () => {
   const [see, setSee] = useState(false);

@@ -18,7 +18,6 @@ import {
 } from "@chakra-ui/react";
 import { Logout } from "iconsax-react";
 import React, { useEffect, useState } from "react";
-import { HOST } from "../../../../route";
 import Map from "@/app/components/Map";
 
 interface Location {
