@@ -47,7 +47,7 @@ function SaveLocation({ location, coords, apijson }: any) {
   const $init = useRef(false);
 
   useEffect(() => {
-    if (location || coords && apijson) {
+    if (location || coords || apijson) {
       if ($init.current) {
         return;
       }
