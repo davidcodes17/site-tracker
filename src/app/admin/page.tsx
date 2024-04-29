@@ -26,7 +26,7 @@ const page = () => {
     password: "",
   });
   const login = () => {
-    fetch(HOST + "/login", {
+    fetch("/api/admin/login", {
       headers: {
         "Content-Type": "application/json",
       },

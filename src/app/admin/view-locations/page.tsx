@@ -62,7 +62,7 @@ const page = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      fetch(HOST + "/get-location", {
+      fetch("/api/admin/get-location", {
         headers: {
           "Content-Type": "application/json",
           Authorization: "Bearer " + token,
