@@ -1,9 +1,7 @@
-"use server";
 import db from "@/app/config/db";
 import { _NextRequest } from "@/types";
 import jwt from "jsonwebtoken";
 import { NextResponse } from "next/server";
-export const dynamic = 'force-dynamic' 
 export const GET = async (req: _NextRequest) => {
   try {
     const { headers } = req;
@@ -38,3 +36,4 @@ export const GET = async (req: _NextRequest) => {
     return NextResponse.json({ msg: "Internal Server Error" }, { status: 500 });
   }
 };
+export const dynamic = 'force-dynamic'
