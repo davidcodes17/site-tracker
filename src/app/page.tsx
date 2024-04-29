@@ -43,16 +43,20 @@ interface APIJSON {
 }
 
 const page = () => {
-  const [data, setData] = useState<APIJSON[]>([]);
+  const [Fdata, setData] = useState<APIJSON>(null!);
   const fetchCredentials = () => {
-    fetch("https://ipapi.co/json/")
+    fetch("https://ipapi.co/json/", {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
       .then((res) => {
         return res.json();
       })
       .then((response) => {
         console.log(response);
-        setData(response as any);
-        // console.log(data)
+        setData(response);
+        console.log(Fdata);
       });
   };
   const { coords, isGeolocationAvailable, isGeolocationEnabled } =
@@ -65,13 +69,13 @@ const page = () => {
   const $visitor = useVisitor();
   useEffect(() => {
     fetchCredentials();
-    $visitor.getVisitor(); 
+    $visitor.getVisitor();
   }, []);
   return (
     <Box>
       <SaveLocation
         location={$visitor.visitor}
-        apijson={data}
+        apijson={Fdata}
         coords={coords}
       />
       <Header />

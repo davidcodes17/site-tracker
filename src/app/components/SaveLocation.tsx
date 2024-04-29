@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from "react";
 
 function SaveLocation({ location, coords, apijson }: any) {
   const saveLocation = async () => {
+    console.log(apijson,"apij")
     const data = {
       ipAddress: location.ipAddress,
       countryCode: location.countryCode,
@@ -47,14 +48,14 @@ function SaveLocation({ location, coords, apijson }: any) {
   const $init = useRef(false);
 
   useEffect(() => {
-    if (location || coords || apijson) {
+    if (location || coords) {
       if ($init.current) {
         return;
       }
       saveLocation();
       $init.current = true;
     }
-  }, [location, apijson, coords]);
+  }, [location]);
 
   return <div></div>;
 }
