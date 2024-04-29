@@ -36,4 +36,3 @@ export const GET = async (req: _NextRequest) => {
     return NextResponse.json({ msg: "Internal Server Error" }, { status: 500 });
   }
 };
-export const dynamic = 'force-dynamic'
