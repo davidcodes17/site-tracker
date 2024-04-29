@@ -1,16 +1,19 @@
-import { NextApiRequest } from "next";
+import { NextApiRequest, NextApiResponse } from "next";
 import db from "@/app/config/db";
 import jwt from "jsonwebtoken";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-const getLocation = async (req: NextApiRequest) => {
+export const GET = async (req: NextRequest) => {
   try {
-    const token = req.cookies["token"]; // or req.headers['authorization']
+    const token = req.headers.get("authorization")
+    console.log(token)
     if (!token) {
-      return NextResponse.json({ status: 404, msg: "Invalid Token" });
+      return NextResponse.json({ msg: "Invalid Token" }, { status: 400 });
     }
 
-    const decode = jwt.verify(token, process.env.JWT_SECRET!);
+    const [_ ,tk] = token.split(" ")
+
+    const decode = jwt.verify(tk, process.env.JWT_SECRET!);
     const u = await db.user.findUnique({
       where: {
         //@ts-expect-error
@@ -19,19 +22,17 @@ const getLocation = async (req: NextApiRequest) => {
       },
     });
     if (!u) {
-      return NextResponse.json({ status: 404, msg: "Invalid Token" });
+      return NextResponse.json({ msg: "Invalid Token" }, { status: 404 });
     }
 
     const locations = await db.locations.findMany({});
-    return NextResponse.json({
-      status: 200,
-      msg: "Fetched Locations",
-      data: locations,
-    });
+    return NextResponse.json(
+      { msg: "Fetched Locations", data: locations },
+      { status: 200 }
+    );
   } catch (error) {
     console.log(error);
-    return NextResponse.json({ status: 404, msg: "Internal Server Error" });
+    return NextResponse.json({ msg: "Internal Server" }, { status: 404 });
   }
 };
 
-export default getLocation;
