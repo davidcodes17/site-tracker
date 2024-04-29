@@ -174,6 +174,10 @@ const page = () => {
                         />
                         <DeviceDetails detail={data.postal} topic="Postal" />
                         <DeviceDetails
+                          detail={data.createdAt}
+                          topic="Date"
+                        />
+                        <DeviceDetails
                           detail={data.country_capital}
                           topic="Country Capital"
                         />
